@@ -19,14 +19,20 @@ public class StoreManage {
     @PostPersist
     public void onPostPersist(){
 
-        System.out.println("***** 배송 요청 중 *****");
+        try {
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+            System.out.println("***** 배송 요청 중 *****");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         if("Payed".equals(process)) {
-            this.setProcess("Shipped");
+            setProcess("Shipped");
             Shipped shipped = new Shipped();
             BeanUtils.copyProperties(this, shipped);
             shipped.publishAfterCommit();
 
+            System.out.println(toString());
             System.out.println("***** 배송 시작 *****");
         }
 
@@ -70,6 +76,14 @@ public class StoreManage {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "StoreManage{" +
+                "id=" + id +
+                ", orderId=" + orderId +
+                ", address='" + address + '\'' +
+                ", item='" + item + '\'' +
+                ", process='" + process + '\'' +
+                '}';
+    }
 }
