@@ -20,13 +20,10 @@ public class StoreManage {
     public void onPostPersist(){
 
         System.out.println("***** 배송 요청 중 *****");
-        System.out.println(getId());
-        System.out.println(getProcess());
 
         if("Payed".equals(process)) {
+            this.setProcess("Shipped");
             Shipped shipped = new Shipped();
-            shipped.setOrderId(getOrderId());
-            shipped.setProcess("Shipped");
             BeanUtils.copyProperties(this, shipped);
             shipped.publishAfterCommit();
 
