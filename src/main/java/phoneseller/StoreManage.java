@@ -24,13 +24,13 @@ public class StoreManage {
         System.out.println(getProcess());
 
         if("Payed".equals(process)) {
-            System.out.println("***** 배송 시작 *****");
-
             Shipped shipped = new Shipped();
             shipped.setOrderId(getOrderId());
             shipped.setProcess("Shipped");
             BeanUtils.copyProperties(this, shipped);
             shipped.publishAfterCommit();
+
+            System.out.println("***** 배송 시작 *****");
         }
 
     }

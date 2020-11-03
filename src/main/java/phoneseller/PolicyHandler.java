@@ -24,10 +24,11 @@ public class PolicyHandler{
 
         if(payCompleted.isMe()){
             System.out.println("##### listener OrderReceive : " + payCompleted.toJson());
+            System.out.println("store_policy_paycompleted_orderreceive");
 
-            System.out.println("store_policy_paycompleted 주문수락");
             StoreManage storeManage = new StoreManage();
-            storeManage.setOrderId(payCompleted.getId());
+            storeManage.setOrderId(payCompleted.getOrderId());
+            storeManage.setProcess(payCompleted.getProcess());
             storeManageRepository.save(storeManage);
         }
     }
