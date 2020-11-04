@@ -18,10 +18,10 @@ public class StoreManage {
 
     @PostPersist
     public void onPostPersist(){
+        System.out.println("***** 배송 요청 중 *****");
 
         try {
-            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
-            System.out.println("***** 배송 요청 중 *****");
+            Thread.currentThread().sleep((long) (2000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -30,7 +30,7 @@ public class StoreManage {
             setProcess("Shipped");
             Shipped shipped = new Shipped();
             BeanUtils.copyProperties(this, shipped);
-            shipped.publishAfterCommit();
+            shipped.publish();
 
             System.out.println(toString());
             System.out.println("***** 배송 시작 *****");

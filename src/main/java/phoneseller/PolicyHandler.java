@@ -28,7 +28,7 @@ public class PolicyHandler{
 
             StoreManage storeManage = new StoreManage();
             storeManage.setOrderId(payCompleted.getOrderId());
-            storeManage.setProcess(payCompleted.getProcess());
+            storeManage.setProcess("Payed");
             storeManageRepository.save(storeManage);
         }
     }
