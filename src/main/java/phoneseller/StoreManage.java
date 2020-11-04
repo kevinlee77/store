@@ -21,7 +21,7 @@ public class StoreManage {
         System.out.println("***** 배송 요청 중 *****");
 
         try {
-            Thread.currentThread().sleep((long) (2000));
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
