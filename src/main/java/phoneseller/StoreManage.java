@@ -18,7 +18,7 @@ public class StoreManage {
 
     @PostPersist
     public void onPostPersist(){
-        System.out.println("***** 배송 요청 중 *****");
+        System.out.println("***** 배송 요청 *****");
 
         try {
             Thread.currentThread().sleep((long) (400 + Math.random() * 220));
@@ -26,6 +26,8 @@ public class StoreManage {
             e.printStackTrace();
         }
 
+        // 결제 완료 상태일 때 배송 처리
+        // (PolicyHandler에서 Listener를 통해 이벤트 상태 인지하여 StoreRepository.save(storemanage)를 통해 호출)
         if("Payed".equals(process)) {
             setProcess("Shipped");
             Shipped shipped = new Shipped();
