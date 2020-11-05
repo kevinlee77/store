@@ -1,4 +1,4 @@
-package phoneseller;
+package bikeseller;
 
 public class Shipped extends AbstractEvent {
 

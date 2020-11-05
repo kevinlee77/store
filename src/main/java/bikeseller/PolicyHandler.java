@@ -1,6 +1,6 @@
-package phoneseller;
+package bikeseller;
 
-import phoneseller.config.kafka.KafkaProcessor;
+import bikeseller.config.kafka.KafkaProcessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

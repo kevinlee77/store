@@ -25,10 +25,10 @@ spring:
       bindings:
         event-in:
           group: store
-          destination: phoneseller
+          destination: bikeseller
           contentType: application/json
         event-out:
-          destination: phoneseller
+          destination: bikeseller
           contentType: application/json
 
 logging:
@@ -57,8 +57,8 @@ spring:
       bindings:
         event-in:
           group: store
-          destination: phoneseller
+          destination: bikeseller
           contentType: application/json
         event-out:
-          destination: phoneseller
+          destination: bikeseller
           contentType: application/json

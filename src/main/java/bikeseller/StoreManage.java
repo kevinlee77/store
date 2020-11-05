@@ -1,4 +1,4 @@
-package phoneseller;
+package bikeseller;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
